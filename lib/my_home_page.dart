@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:shake/shake.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
+
   final String title;
 
   @override
@@ -12,6 +14,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> with WidgetsBindingObserver {
   int _counter = 0;
   late ShakeDetector detector;
+
   @override
   void initState() {
     WidgetsBinding.instance.addObserver(this);
@@ -45,9 +48,22 @@ class _MyHomePageState extends State<MyHomePage> with WidgetsBindingObserver {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
-              '흔들어서 카운트를 올려보세요.',
-            ),
+            '흔들어서 카운트를 올려보세요.'
+                .text
+                .color(Colors.red)
+                .bold
+                .black
+                .size(
+                  20,
+                )
+                .isIntrinsic
+                .makeCentered()
+                .box
+                .withRounded(value: 50)
+                .color(Colors.green)
+                .height(150)
+                .make()
+                .pSymmetric(h: 20, v: 50),
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.displayLarge,
