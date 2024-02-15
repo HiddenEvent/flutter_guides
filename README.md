@@ -1,4 +1,4 @@
-# flutter_guides
+# fast_app_base
 
 A new Flutter project.
 
