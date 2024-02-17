@@ -20,7 +20,7 @@ class MainScreenState extends State<MainScreen> with SingleTickerProviderStateMi
   final tabs = [
     TabItem.home,
     TabItem.benefit,
-    TabItem.ttosspay,
+    TabItem.ttospay,
     TabItem.stock,
     TabItem.all,
   ];
