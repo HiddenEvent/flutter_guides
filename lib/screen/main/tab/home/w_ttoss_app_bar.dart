@@ -42,17 +42,6 @@ class _TtossAppBarState extends State<TtossAppBar> {
                       ),
                     ),
                   )
-                else
-                  Positioned.fill(
-                    child: Align(
-                      alignment: Alignment.topRight,
-                      child: Container(
-                        width: 6,
-                        height: 6,
-                        decoration: BoxDecoration(shape: BoxShape.circle, color: Colors.blue),
-                      ),
-                    ),
-                  )
               ],
             ),
           ),
