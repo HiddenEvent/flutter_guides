@@ -9,6 +9,7 @@ class TtossAppBar extends StatefulWidget {
 }
 
 class _TtossAppBarState extends State<TtossAppBar> {
+  bool _showRedDot = false;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -21,7 +22,40 @@ class _TtossAppBarState extends State<TtossAppBar> {
           emptyExpanded,
           Image.asset('$basePath/icon/map_point.png', height: 30),
           width10,
-          Image.asset('$basePath/icon/notification.png', height: 30),
+          Tap(
+            onTap: () {
+              setState(() {
+                _showRedDot = !_showRedDot;
+              });
+            },
+            child: Stack(
+              children: [
+                Image.asset('$basePath/icon/notification.png', height: 30),
+                if (_showRedDot)
+                  Positioned.fill(
+                    child: Align(
+                      alignment: Alignment.topRight,
+                      child: Container(
+                        width: 6,
+                        height: 6,
+                        decoration: BoxDecoration(shape: BoxShape.circle, color: Colors.red),
+                      ),
+                    ),
+                  )
+                else
+                  Positioned.fill(
+                    child: Align(
+                      alignment: Alignment.topRight,
+                      child: Container(
+                        width: 6,
+                        height: 6,
+                        decoration: BoxDecoration(shape: BoxShape.circle, color: Colors.blue),
+                      ),
+                    ),
+                  )
+              ],
+            ),
+          ),
           width10,
         ],
       ),
