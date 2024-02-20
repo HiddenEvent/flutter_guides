@@ -19,6 +19,7 @@ class HomeFragment extends StatelessWidget {
       child: Stack(
         children: [
           SingleChildScrollView(
+            padding: EdgeInsets.only(top: 60),
             child: Column(
               children: [
                 BigButton(
@@ -26,7 +27,7 @@ class HomeFragment extends StatelessWidget {
                   onTap: () => context.showSnackbar('토스뱅크 버튼 클릭'),
                 )
               ],
-            ),
+            ).pSymmetric(h: 20),
           ),
           TtossAppBar(),
         ],
